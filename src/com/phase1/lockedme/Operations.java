@@ -90,7 +90,7 @@ public class Operations {
 	}
 
 	public void addFile() {
-        UserOperationsList list = new UserOperationsList();
+        FileOperations list = new FileOperations();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the name of the file");
 		String fileName = input.nextLine();
@@ -108,7 +108,7 @@ public class Operations {
 			System.out.println("");
 			System.out.println("***********************************");
 			System.out.println("Enter the operation number that you want to perform");
-			list.operationList();
+			list.fileOperationList();
 			
 			
 		} catch (IOException e) {
@@ -118,7 +118,7 @@ public class Operations {
 	}
 
 	public void deleteFile() {
-        UserOperationsList list = new UserOperationsList();
+        FileOperations list = new FileOperations();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the file name that you want to delete");
 		String fileName = input.nextLine();
@@ -133,7 +133,7 @@ public class Operations {
 			System.out.println("");
 			System.out.println("***********************************");
 			System.out.println("Enter the operation number that you want to perform");
-			list.operationList();
+			list.fileOperationList();
 		} catch (Exception e) {
 			System.out.println("An error occurred "+e.getMessage());
 		}
@@ -142,7 +142,7 @@ public class Operations {
 	}
 
 	public void searchFile() {
-		UserOperationsList list = new UserOperationsList();
+		FileOperations list = new FileOperations();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the file name");
         String fileName = input.nextLine();
@@ -178,7 +178,7 @@ public class Operations {
 		System.out.println("");
 		System.out.println("***********************************");
 		System.out.println("Enter the operation number that you want to perform");
-		list.operationList();
+		list.fileOperationList();
 
 	}
 

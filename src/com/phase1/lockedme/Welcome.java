@@ -15,9 +15,10 @@ public class Welcome {
 	public void welcomeUser() {
 
 		Scanner input = new Scanner(System.in);
-		System.out.println("1 Registtration");
+		System.out.println("1 Registration");
 		System.out.println("2 Login");
 		System.out.println("3 Exit");
+		System.out.println("***********************************");
 		
 
 		try {
@@ -41,6 +42,7 @@ public class Welcome {
 			}
 		} catch (Exception e) {
 			System.out.println("Invalid input, Enter valid number");
+			System.out.println("***********************************");
 			welcomeUser();
 		}
 

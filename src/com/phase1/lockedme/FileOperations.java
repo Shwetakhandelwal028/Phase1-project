@@ -8,6 +8,7 @@ public class FileOperations {
 	Operations op = new Operations();
 
 	public void fileOperationList() {
+		System.out.println(" ");
 		System.out.println("1 Add a file");
 		System.out.println("2 Delete a file");
 		System.out.println("3 Search for a file");
@@ -39,12 +40,12 @@ public class FileOperations {
 				System.out.println("Invalid input, Enter valid number");
 				System.out.println("***********************************");
 				fileOperationList();
-				System.out.println("***********************************");
-				
+				break;
 			}
 			}
 		} catch (Exception e) {
 			System.out.println("Invalid input, Enter valid number");
+			System.out.println("***********************************");
 			fileOperationList();
 		}
 	}

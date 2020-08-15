@@ -25,7 +25,8 @@ public class UserOperationsList {
 				op.fetchFiles();
 				break;
 			case 3:
-
+				System.out.println("Enter the operation number that you want to perform");
+				
 				FileOperations list = new FileOperations();
 				list.fileOperationList();
 				break;
@@ -42,6 +43,7 @@ public class UserOperationsList {
 			}
 		} catch (Exception e) {
 			System.out.println("Invalid input, Enter valid number");
+			System.out.println("***********************************");
 			operationList();
 		}
 
