@@ -1,31 +1,39 @@
 package com.phase1.lockedme;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+
 
 public class UserLogin {
 	
 	UserOperationsList list = new UserOperationsList();
+	
 
 	public void login() {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter Username");
-		String username = input.nextLine();
+		String lockerUsername = input.nextLine();
 		System.out.println("Enter Password");
-		String password = input.nextLine();
-		boolean response = validateUser(username, password);
+		String lockerPassword = input.nextLine();
+		boolean response = validateUser(lockerUsername, lockerPassword);
 		if (response) {
 			login();
 		} else {
-			verifyUser(username, password);
+			verifyUser(lockerUsername, lockerPassword);
 		}
 
 	}
 
-	public boolean validateUser(String username, String password) {
+	public boolean validateUser(String lockerUsername, String lockerPassword) {
 		boolean response = false;
-		if (username.isEmpty() || password.isEmpty()) {
+		if (lockerUsername.isEmpty() || lockerPassword.isEmpty()) {
 			System.out.println("Username & Password cannot be empty");
 			return response = true;
 
@@ -33,10 +41,9 @@ public class UserLogin {
 		return response;
 	}
 
-	public void verifyUser(String username, String password) {
-
+	public void verifyUser(String lockerUsername, String lockerPassword) {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("//home//ubuntu//eclipse-workspace//LockedMeApplication//database//locker.txt"));
+			BufferedReader reader = new BufferedReader(new FileReader("locker.txt"));
 			boolean found = false;
 			String line = null;
 			String tempUserName = "";
@@ -48,7 +55,7 @@ public class UserLogin {
 				// System.out.println(Arrays.toString(sArray));
 				tempUserName = sArray[0];
 				tempPassword = sArray[1];
-				if (username.trim().equals(tempUserName) && password.trim().equals(tempPassword)) {
+				if (lockerUsername.trim().equals(tempUserName) && lockerPassword.trim().equals(tempPassword)) {
 					System.out.println("Valid User");
 					System.out.println("***********************************");
 					System.out.println("Enter the operation number that you want to perform");
@@ -66,6 +73,9 @@ public class UserLogin {
 			System.out.println("Error Occurred " + e.getMessage());
 			e.printStackTrace();
 		}
+		
 	}
+	
+
 
 }

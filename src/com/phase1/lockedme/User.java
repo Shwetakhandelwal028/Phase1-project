@@ -1,13 +1,24 @@
 package com.phase1.lockedme;
 
-public class UserData {
-	
+import java.io.Serializable;
+
+public class User implements Serializable {
+
 	private String name;
 	private String siteName;
 	private String username;
 	private String password;
-	
-	public UserData() {}
+
+	public User() {
+	}
+
+	public User(String name, String siteName, String username, String password) {
+		super();
+		this.name = name;
+		this.siteName = siteName;
+		this.username = username;
+		this.password = password;
+	}
 
 	public String getName() {
 		return name;
@@ -40,10 +51,5 @@ public class UserData {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
-	
-	
 
 }
