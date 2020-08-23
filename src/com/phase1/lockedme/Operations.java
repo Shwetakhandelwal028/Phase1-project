@@ -207,7 +207,7 @@ public class Operations {
 			String tempName = "";
 			String tempSiteName = "";
 
-			boolean count = false;
+			boolean response = false;
 			while ((line = reader.readLine()) != null) {
 
 				if (line.equalsIgnoreCase(name)) {
@@ -221,12 +221,12 @@ public class Operations {
 					System.out.println("username : " + tempUserName);
 					System.out.println("password : " + tempPassword);
 
-					count = true;
+					response = true;
 
 				}
 
 			}
-			if (!count) {
+			if (!response) {
 				System.out.println("User does not exist by name : " + name);
 
 			}
