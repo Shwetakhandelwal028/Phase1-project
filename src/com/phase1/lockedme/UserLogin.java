@@ -1,6 +1,7 @@
 package com.phase1.lockedme;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,6 +15,7 @@ import java.util.Scanner;
 public class UserLogin {
 	
 	UserOperationsList list = new UserOperationsList();
+	Welcome user;
 	
 
 	public void login() {
@@ -43,7 +45,12 @@ public class UserLogin {
 
 	public void verifyUser(String lockerUsername, String lockerPassword) {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("locker.txt"));
+			File file = new File("locker.txt");
+			BufferedReader reader;
+			if(file.exists()) {
+				reader  = new BufferedReader(new FileReader("locker.txt"));
+			
+			
 			boolean found = false;
 			String line = null;
 			String tempUserName = "";
@@ -65,9 +72,20 @@ public class UserLogin {
 			}
 			if (found == false) {
 				System.out.println("Invalid User");
-				login();
+				System.out.println("Perform Registration First");
+				System.out.println("***********************************");
+				user = new Welcome();
+				user.welcomeUser();
+				
 			}
 			reader.close();
+			}else {
+				System.out.println("Invalid User");
+				System.out.println("Perform Registration First");
+				System.out.println("***********************************");
+				user = new Welcome();
+				user.welcomeUser();
+			}
 
 		} catch (Exception e) {
 			System.out.println("Error Occurred " + e.getMessage());

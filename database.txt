@@ -2,27 +2,7 @@ Shweta
 Locker Credentials
 shwet23
 sk
-Nikunj
+John
 Locker Credentials
-nik1234
-nk
-nikunj
-Locker Credentials
-nik1234
-nk
-james
-Locker Credentials
-james@gmail.com
-james007
-john
-Locker Credentials
-johnD
-john1234
-mary
-Locker Credentials
-maryS
-mary@27
-robert
-Locker Credentials
-robert22
-robert@1234
+jo22
+jo@123

@@ -1,7 +1,2 @@
 shwet23,sk
-nik1234,nk
-nik1234,nk
-james@gmail.com,james007
-johnD,john1234
-maryS,mary@27
-robert22,robert@1234
+jo22,jo@123

@@ -173,6 +173,7 @@ public class Operations {
 		if (username.trim().equals("admin") && password.trim().equals("admin1234")) {
 
 			File dirPath = new File("users");
+			if(dirPath.exists()) {
 
 			File[] fileList = dirPath.listFiles();
 			Arrays.sort(fileList);
@@ -183,8 +184,13 @@ public class Operations {
 
 			}
 		} else {
+			System.out.println("User Files are not present");
+		}
+		}
+			else {
 			System.out.println("You does not have access for this operation");
 		}
+		
 		System.out.println("");
 		System.out.println("***********************************");
 		System.out.println("Enter the operation number that you want to perform");
